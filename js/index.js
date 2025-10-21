@@ -48,12 +48,4 @@ contentBlock.addEventListener('click', e=>{
         eTarget.textContent= `${keyArr[indexValue]}`
     }
     })
-    // {
-    //     img: '../../img/item4.jpeg',
-    //     title: 'Convertor',
-    //     description: 'The project was created on React. The program converts currency, saves previous conversions with the current date',
-    //     using: ['react-router-dom', 'new Date'],
-    //     linkShow :'https://convertor-build.vercel.app/',
-    //     linkCode :'https://github.com/evelinavegas/Convertor/tree/main',
-    // },
     
