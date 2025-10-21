@@ -37,7 +37,7 @@ contentBlock.addEventListener('click', e => {
     e.preventDefault()
     let eTarget = e.target
     let targetContent = e.target.textContent
-    eTarget.classList.add('bg-active')
+    eTarget.classList.contains('content-el') ? eTarget.classList.add('bg-active'): null
     let indexKey = keyArr.indexOf(targetContent)
     let indexValue = valueArr.indexOf(targetContent)
 
