@@ -1,14 +1,32 @@
-import arrContent from "./arr.js"
-const list = document.querySelector('.list-wrapp')
+import{wortarten, themen} from "./arr.js"
+const firstBtnChoice = document.querySelector('#start-choice')
+const list = document.querySelector('#list-wrapp')
 const contentBlock = document.querySelector('.content-wrapp')
-let listArr = ['verben', 'adjectives', 'nomen', 'ausgewählt']
-listArr.forEach(e => {
-    let listBtn = document.createElement('div')
-    listBtn.classList.add('list-btn')
-    listBtn.setAttribute('data-id', `${e}`)
-    listBtn.textContent = `${e}`
-    list.appendChild(listBtn)
+let listArr = {
+    wortarten:['verben', 'adjectives', 'nomen', 'ausgewählt'],
+    themen: ['autofahren', 'natur']
+}
+let firstChoiceData = ''
+let choiceArr = []
+firstBtnChoice.addEventListener('click', e =>{
+    e.preventDefault()
+    firstChoiceData= e.target.textContent
+    choiceArr= firstChoiceData== 'wortarten'?  wortarten : themen
+    createList(listArr[firstChoiceData])
 })
+
+function createList(arr){
+    list.classList.remove('none')
+    list.innerHTML = ''
+    arr.forEach(e => {
+        let listBtn = document.createElement('div')
+        listBtn.classList.add('list-btn')
+        listBtn.setAttribute('data-id', `${e}`)
+        listBtn.textContent = `${e}`
+        list.appendChild(listBtn)
+    })
+}
+
 function addEllement(htmlBlock, className) {
     let element = document.createElement(htmlBlock)
     element.classList.add(className)
@@ -20,9 +38,11 @@ let listId = ''
 let keyArr = []
 let valueArr = []
 list.addEventListener('click', e => {
+
     e.preventDefault()
+    console.log(choiceArr)
     listId = e.target.dataset.id
-    let selectArr = arrContent[listId]
+    let selectArr = choiceArr[listId]
     keyArr = Object.keys(selectArr)
     valueArr = Object.values(selectArr)
     contentBlock.innerHTML = ''
