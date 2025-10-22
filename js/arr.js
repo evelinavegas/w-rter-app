@@ -1,4 +1,4 @@
-let wortarten = {
+let arrContent = {
   verben: {
     können: 'могти',
     müssen: 'повинний',
@@ -333,11 +333,6 @@ let wortarten = {
     'der spieler': 'гравець',
     'der trainer': 'тренер'
   },
-  ausgewählt: {
-
-  },
-}
-let themen = {
   natur: {
     'der baum': 'дерево',
     'die blume': 'квітка',
@@ -556,5 +551,11 @@ let themen = {
     'das navigationssystem': 'GPS-навігація',
     'der kartenplotter': 'картографічний навігатор'
   },
+  ausgewählt: {
+
+  },
 }
-export {wortarten, themen}
+
+export {arrContent, }
+
+
